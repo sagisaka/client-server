@@ -17,23 +17,26 @@ if(!DEBUG){
 }
 
 module.exports = {
-  entry: path.join(__dirname, 'src/app.js'),
+  context: __dirname + '/src/js',
+  entry: {
+    js: "./app.js"
+  },
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
   devServer: {
-    hot: true, 
+    hot: true,
     contentBase: path.join(__dirname, 'public'),
     port: 3000,
-    inline: true
+    inline: true,
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
+        use: 'babel-loader',
         exclude: /node_modules/,
-        loader: 'babel'
       }
     ]
   },
