@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import request from 'superagent'
 
 const REQUEST_URL = 'http://localhost:8080/api/product'
-const Image_URL = 'http://localhost:8080/image'
+const Image_URL = 'http://localhost:8080/image/'
 
 export class GetData extends React.Component {
   constructor(props) {

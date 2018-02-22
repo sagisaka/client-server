@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import request from 'superagent'
 
 const REQUEST_URL = 'http://localhost:8080/api/log'
-const Image_URL = 'http://localhost:8080/image'
+const Image_URL = 'http://localhost:8080/image/'
 
 export class LogData extends React.Component {
   constructor(props) {
