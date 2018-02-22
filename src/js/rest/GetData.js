@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import request from 'superagent'
 
 const REQUEST_URL = 'http://localhost:8080/api/product'
+const Image_URL = 'http://localhost:8080/image'
 
 export class GetData extends React.Component {
   constructor(props) {
@@ -56,7 +57,7 @@ export class GetData extends React.Component {
       <button onClick={this.SearchGetClick.bind(this)}>検索</button>
       {this.state.data.map((item) => {
         return (
-          <li key={item.id}>{item.id},{item.name},{item.price},{item.author},{item.introduction} <img src={item.imageUrl} /></li>
+          <li key={item.id}>{item.id},{item.name},{item.price},{item.author},{item.introduction} <img src={Image_URL+item.imageUrl} /></li>
         )
       })}
       </ul>

@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import request from 'superagent'
 
 const REQUEST_URL = 'http://localhost:8080/api/log'
+const Image_URL = 'http://localhost:8080/image'
 
 export class LogData extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ export class LogData extends React.Component {
       <p>delete {this.state.deleteCount}</p>
       {this.state.data.map((item) => {
         return (
-          <li key={item.id}>{item.id},{item.name},{item.price},{item.author},{item.introduction},{item.productApi} <img src={item.imageUrl} /></li>
+          <li key={item.id}>{item.id},{item.name},{item.price},{item.author},{item.introduction},{item.productApi} <img src={Image_URL+item.imageUrl} /></li>
         )
       })}
       </ul>
